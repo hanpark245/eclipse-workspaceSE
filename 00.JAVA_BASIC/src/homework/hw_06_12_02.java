@@ -1,6 +1,6 @@
 package homework;
 
-public class hw06_12_02 
+public class hw_06_12_02 
 {
 	public static void main(String[] args)
 	{
