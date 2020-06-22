@@ -14,7 +14,7 @@ public class Student
 	char grade; 	//학점
 	
 	
-	public void getInfo(String id, String name, int kor, int eng, int math)
+	public void setInfo(String id, String name, int kor, int eng, int math)
 	{
 		this.id = id;
 		this.name = name;
@@ -24,10 +24,9 @@ public class Student
 	}
 	
 	//총점 계산함수
-	public int getTotal(int kor, int eng, int math)
+	public void getTotal()
 	{	
-		int total = kor + eng + math;
-		return total;
+		this.total = kor + eng + math;
 	}
 	
 	//유효점수 판별 함수
@@ -43,49 +42,41 @@ public class Student
 	}
 	
 	//평균 계산함수
-	double getAvg(int total)
+	public void getAvg()
 	{
-		return avg = total / 3.0;
+		this.avg = total / 3.0;
 	}
 	
 	
 	//학점 계산함수
-	public char getGrade(double avg)
+	public void getGrade()
 	{	
-		char grade;
-		
 		switch((int)avg / 10)	
 		{
 			case 10:
-				grade = 'A';
+				this.grade = 'A';
 				break;
 			case 9:
-				grade = 'A';
+				this.grade = 'A';
 				break;
 			case 8:
-				grade = 'B';
+				this.grade = 'B';
 				break;
 			case 7:
-				grade = 'C';
+				this.grade = 'C';
 				break;
 			case 6:
-				grade = 'D';
+				this.grade = 'D';
 				break;
 			default:
-				grade = 'F';
+				this.grade = 'F';
 				break;
 		}
-		return grade; 
 	}
 	
 	//결과출력
-	public void print(String id1, String id2, String name1, String name2, int kor1, int kor2, int eng1, int eng2, int math1, int math2, int total1, int total2, double avg1, double avg2, char grade1, char grade2, int rank1, int rank2)
+	public void print()
 	{
-		System.out.printf("---------------학생 성적출력-------------------\n");
-		System.out.printf("%s  %s   %s %s %s %s %s %s %s", "학번","이름","국어","영어","수학","총점","평균","평점","석차");
-		System.out.println("\n-----------------------------------------------");
-		System.out.printf("%2s  %-4s %3d %4d %4d %4d %5.1f %3c %4d", id1, name1, kor1, eng1, math1, total1, avg1, grade1, rank1);
-		System.out.printf("\n%2s  %-4s %3d %4d %4d %4d %5.1f %3c %4d", id2, name2, kor2, eng2, math2, total2, avg2, grade2, rank2);
-		System.out.println("\n-----------------------------------------------");
+		System.out.printf("%2s  %-4s %3d %4d %4d %4d %5.1f %3c %4d\n", id, name, kor, eng, math, total, avg, grade, rank);
 	}
 }

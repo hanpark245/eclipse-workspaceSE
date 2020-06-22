@@ -7,6 +7,18 @@ public class Account
 	private int balance;		//잔고
 	private double interest;	//이율
 	
+	//생성자를 추가합니다
+	public Account() 
+	{
+		
+	}
+	public Account(int no, String owner, int balance, double interest) 
+	{
+		this.no = no;
+		this.owner = owner;
+		this.balance = balance;
+		this.interest = interest;
+	}
 	//멤버메쏘드
 	
 	//입금
@@ -22,7 +34,7 @@ public class Account
 	}
 	
 	//계좌데이터 set
-	void setAccountData(int no, String owner, int balance, double interest)
+	public void setAccountData(int no, String owner, int balance, double interest)
 	{
 		this.no = no;
 		this.owner = owner;
@@ -71,6 +83,15 @@ public class Account
 		this.interest = interest;
 	}
 
+	/*
+	 * 
+	 */
+	public void headerPrint()
+	{
+		System.out.println("-------------------------");
+		System.out.printf("%s %s %s %s %n", "번호", "이름", "잔고", "이율");
+		System.out.println("-------------------------");
+	}
 	
 	//계좌정보출력
 	public void print()

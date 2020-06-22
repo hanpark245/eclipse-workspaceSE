@@ -8,10 +8,10 @@ public class StudentMemberMethodMain
 		//객체 선언
 		Student student1 = new Student();
 		Student student2 = new Student();
-		Student voidFunction = new Student();
+	
 		//정보 대입매소드 호출
-		student1.getInfo("박강한", "1234", 97, 98, 100);
-		student2.getInfo("박약한", "5678", 78, 60, 88);
+		student1.setInfo("박강한", "1234", 97, 98, 100);
+		student2.setInfo("박약한", "5678", 78, 60, 88);
 
 		
 		//점수유효 메소드 호출
@@ -24,16 +24,16 @@ public class StudentMemberMethodMain
 		}
 		
 		//총점 매소드 호출
-		student1.total = student1.getTotal(student1.kor, student1.eng, student1.math);
-		student2.total = student2.getTotal(student2.kor, student2.eng, student2.math);
+		student1.getTotal();
+		student2.getTotal();
 		
 		//평균 매소드 호출
-		student1.avg = student1.getAvg(student1.total);
-		student2.avg = student2.getAvg(student2.total);
+		student1.getAvg();
+		student2.getAvg();
 		
 		//학점 매소드 호출
-		student1.grade = student1.getGrade(student1.avg);
-		student2.grade = student2.getGrade(student2.avg);
+		student1.getGrade();
+		student2.getGrade();
 		
 		//석차 계산
 		if(student1.avg > student2.avg)
@@ -54,7 +54,11 @@ public class StudentMemberMethodMain
 		
 		
 		//결과 출력 매소드 호출
-		voidFunction.print(student1.id, student2.id, student1.name, student2.name, student1.kor, student2.kor, student1.eng, student2.eng, student1.math, student2.math, student1.total, student2.total, student1.avg, student2.avg, student1.grade, student2.grade, student1.rank, student2.rank);
+		System.out.printf("---------------학생 성적출력-------------------\n");
+		System.out.printf("%s  %s   %s %s %s %s %s %s %s", "학번","이름","국어","영어","수학","총점","평균","평점","석차");
+		System.out.println("\n-----------------------------------------------");
+		student1.print();
+		student2.print();
 		
 		//프로그램 종료
 		return;

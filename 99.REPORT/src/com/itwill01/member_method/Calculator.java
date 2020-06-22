@@ -10,14 +10,15 @@ public class Calculator
 	 * div
 	 * multiple
 	 */
+	
+	//------------------멤버변수 선언--------------------
 	int sum;
 	int difference;
 	double div;
 	double mul;
+	
+	//-------------------멤버 메소드---------------------
 	//더하는 함수
-	
-	
-	
 	public int addition(int a, int b)
 	{
 		return a + b;
