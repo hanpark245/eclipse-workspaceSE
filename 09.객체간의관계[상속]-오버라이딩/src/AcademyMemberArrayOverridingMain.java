@@ -28,7 +28,7 @@ public class AcademyMemberArrayOverridingMain {
 		}
 		System.out.println("-------------Staff--------------");
 		for (int i = 0; i < staffs.length; i++) {
-			staffs[i].staffPrint();
+			staffs[i].print();
 		}
 	}
 

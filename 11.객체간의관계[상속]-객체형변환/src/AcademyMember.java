@@ -1,9 +1,11 @@
-public class AcademyMember {
-	public int no;
-	public String name;
+public class AcademyMember extends Object{
+	private int no;
+	private String name;
 	public AcademyMember() {
+		super();
 	}
 	public AcademyMember(int no, String name) {
+		super();
 		this.no = no;
 		this.name = name;
 	}

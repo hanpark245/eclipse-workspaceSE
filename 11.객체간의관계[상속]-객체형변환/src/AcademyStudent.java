@@ -3,14 +3,26 @@ public class AcademyStudent extends AcademyMember {
 	public AcademyStudent() {
 	}
 	public AcademyStudent(int no,String name,String ban) {
-		//this.no=no;
-		//this.name=name;
-		this.setNo(no);;
-		this.setName("name");
+		/* 
+		<< 상속받은 private  member 접근불가능 >>
+		this.no=no;
+		this.name=name;
+		*/
+		/*
+		<< 상속받은 public  method를 통한 접근가능 >>
+		this.setNo(no);
+		this.setName(name);
+		 */
+		super(no, name);
 		this.ban = ban;
 	}
-	
-	public void Print() {
+	/*
+	public void print() {
+		System.out.print(no+"\t"+name+"\t");
+	}
+	 */
+	@Override
+	public void print() {
 		super.print();
 		System.out.println(ban);
 	}

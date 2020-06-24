@@ -1,11 +1,10 @@
 public class AcademyGangsa extends AcademyMember {
 	public String subject;//과목
 	public AcademyGangsa() {
-		// TODO Auto-generated constructor stub
+		super();
 	}
 	public AcademyGangsa(int no,String name,String subject) {
-		this.no=no;
-		this.name=name;
+		super(no, name);
 		this.subject = subject;
 	}
 	public void print() {
