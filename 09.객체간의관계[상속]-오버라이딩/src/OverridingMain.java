@@ -26,5 +26,8 @@ public class OverridingMain
 		oc.method1();
 		oc.method2();
 		oc.method3();
+		/*
+		 *  상속받은 method2()는 은폐되고 재정의된 메쏘드만 호출됨
+		 */
 	}
 }
