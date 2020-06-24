@@ -1,0 +1,52 @@
+!SESSION 2020-06-24 10:27:58.374 -----------------------------------------------
+eclipse.buildId=4.15.0.I20200305-0155
+java.version=1.8.0_251
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -data C:\Users\stu05\eclipse-workspace\eclipse-workspace-home -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-06-24 10:28:09.945
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\stu05'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.core.jobs 4 2 2020-06-24 10:32:40.641
+!MESSAGE An internal error occurred during: "Search Marketplace for compatible editors (config)".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.epp.internal.mpc.ui.discovery.DiscoverFileSupportJob.orderNodesByTagSubExtensionCount(DiscoverFileSupportJob.java:126)
+	at org.eclipse.epp.internal.mpc.ui.discovery.DiscoverFileSupportJob.run(DiscoverFileSupportJob.java:87)
+	at org.eclipse.epp.internal.mpc.ui.discovery.DiscoverFileSupportJob.run(DiscoverFileSupportJob.java:70)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2020-06-24 10:35:46.632
+!MESSAGE Could not delete file C:\Users\stu05\git\eclipse-workspaceSE\.git\objects\pack\pack-ec21876fe6b35c1da43f3be90e97b56e9dad7327.idx
+!STACK 0
+java.io.IOException: Could not delete file C:\Users\stu05\git\eclipse-workspaceSE\.git\objects\pack\pack-ec21876fe6b35c1da43f3be90e97b56e9dad7327.idx
+	at org.eclipse.jgit.util.FileUtils.delete(FileUtils.java:214)
+	at org.eclipse.jgit.util.FileUtils.delete(FileUtils.java:164)
+	at org.eclipse.jgit.util.FileUtils.delete(FileUtils.java:166)
+	at org.eclipse.jgit.util.FileUtils.delete(FileUtils.java:166)
+	at org.eclipse.egit.ui.internal.repository.tree.command.RemoveCommand.deleteRepositoryContent(RemoveCommand.java:258)
+	at org.eclipse.egit.ui.internal.repository.tree.command.RemoveCommand.access$8(RemoveCommand.java:238)
+	at org.eclipse.egit.ui.internal.repository.tree.command.RemoveCommand$2.runInWorkspace(RemoveCommand.java:180)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.nio.file.AccessDeniedException: C:\Users\stu05\git\eclipse-workspaceSE\.git\objects\pack\pack-ec21876fe6b35c1da43f3be90e97b56e9dad7327.idx
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:83)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:102)
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(WindowsFileSystemProvider.java:269)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(AbstractFileSystemProvider.java:108)
+	at java.nio.file.Files.deleteIfExists(Files.java:1165)
+	at org.eclipse.jgit.util.FileUtils.delete(FileUtils.java:206)
+	... 8 more
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-06-24 10:40:26.199
+!MESSAGE close() called when useCnt is already zero for Repository[C:\Users\stu05\git\repository\.git]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-06-24 11:49:18.226
+!MESSAGE close() called when useCnt is already zero for Repository[C:\Users\stu05\git\eclipse-workspaceSE\.git]
