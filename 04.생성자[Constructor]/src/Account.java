@@ -12,6 +12,14 @@ public class Account
 	{
 		
 	}
+	
+	
+	/**
+	 *  @param no		//계좌번호
+	 *  @param owner	//계좌주
+	 *  @param balance	//잔고
+	 *  @param interest	//이율
+	 */
 	public Account(int no, String owner, int balance, double interest) 
 	{
 		this.no = no;

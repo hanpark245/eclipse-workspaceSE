@@ -1,7 +1,9 @@
 package com.itwill04.carArray;
 
-public class CarArrayMain {
-	public static void main(String[] args) {
+public class CarArrayMain 
+{
+	public static void main(String[] args) 
+	{
 		/*
 		 * NullPointerException
 		 */
@@ -23,10 +25,24 @@ public class CarArrayMain {
 				carArray[i].print();
 			}
 		}
-		System.out.println("2.주차전체구획수:");
-		
 		int count = 0;
+		for (int i = 0; i < carArray.length; i++) 
+		{
+			count++;
+		}
+		System.out.println("2.주차전체구획수:" + count);
+		
+		
+		count = 0;
+		for (int i = 0; i < carArray.length; i++) 
+		{
+			if(carArray[i] == null)
+			{
+				count++;
+			}
+		}
 		System.out.println("3.주차가능주차구획수:" + count);
+
 		System.out.println("4.입차");
 		/*
 		 * 1.차량객체생성 

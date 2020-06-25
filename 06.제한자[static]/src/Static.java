@@ -13,29 +13,40 @@
  *  	멤버변수: public static int i;
  * 		멤버메쏘드:public static void print(){}
  * 
+ * 변수 
+ *   1.지역변수
+ *   2.멤버변수
+ *      2-1.객체   변수(인스턴스)
+ *      2-2.클래스 변수(정적,공용)
+ * 메쏘드
+ *   1.멤버메쏘드
+ *      1-1.객체   메쏘드(인스턴스)
+ *      2-1.클래스 메쏘드(정적,공용)
  * 
- * 	변수
- * 		1.지역변수
- * 		2.멤버변수
- * 			2.1 인스턴스변수(객체변수)
- * 			2.2 클래스변수(스태틱, 정적, 공용변수)
- *	
- *	메쏘드
- *		1.1 객체 메쏘드 (인스턴스)
- *		1.2 클래스 메쏘드(정적, 공용)
- *
  */
+public class Static {
+	public int instance_member_field=100;
+	public static int static_member_field=200;
 	
-public class Static 
-{
-	public int instance_member_field = 100;
-	public static int static_member_field = 200;
-	public void instance_method()
-	{
-		System.out.println("난 인스턴스 메쏘드");
+	public void instance_method() {
+		System.out.println("난 인스턴스(객체)메쏘드(this사용가능):"+this+":"+this.instance_member_field);
 	}
-	public static void static_method()
-	{
-		System.out.println("난 정적(스태틱) 메쏘드");
+	public static void static_method() {
+		System.out.println("난 정적(공용,클래스)메쏘드(this사용불가능):");
+		
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
