@@ -36,7 +36,8 @@ public class AccountService {
 		temp[temp.length - 1] = account;
 		
 		accounts = temp;
-		for (int i = 0; i < temp.length; i++) {
+		for (int i = 0; i < temp.length; i++) 
+		{
 			System.out.println(accounts[i]);
 		}
 		
