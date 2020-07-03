@@ -20,8 +20,6 @@ public class GenericMain {
 		genericClass.setMember("스트링");
 		String str=genericClass.getMember();
 		System.out.println(str);
-		
-		
 		GenericClass<Account> genericClass1=
 				new GenericClass<Account>();
 		genericClass1.setMember(new Account(1111, "ONE", 10000, 1.1));

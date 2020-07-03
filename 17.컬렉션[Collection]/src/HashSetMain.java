@@ -10,7 +10,7 @@ public class HashSetMain {
 		Account acc4=new Account(4444, "SANG", 12000, 0.5);
 		Account acc5=new Account(5555, "KING", 99000, 0.8);
 		
-		HashSet accountSet=new  HashSet();
+		HashSet accountSet=new HashSet();
 		System.out.println("#size:"+accountSet.size());
 		System.out.println("*************** 1.add *************");
 		accountSet.add(acc1);
