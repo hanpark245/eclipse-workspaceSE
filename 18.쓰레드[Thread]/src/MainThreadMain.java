@@ -52,6 +52,7 @@ public class MainThreadMain {
 		System.out.println("1.main 쓰레드");
 		MainThreadCalled mtc=new MainThreadCalled();
 		mtc.main_thread_called_method();
+		
 		System.out.println("2.main 쓰레드");
 		
 	}
