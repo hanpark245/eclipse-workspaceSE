@@ -3,21 +3,28 @@ package com.itwill.account.test;
 import com.itwill.account.Account;
 import com.itwill.account.AccountDao;
 
-public class AccountDaoTestMain 
-{
-	public static void main(String[] args) throws Exception 
-	{
-		AccountDao accountDao = new AccountDao();
-		accountDao.create(new Account(1, "ONE", 123, 1.2));
-		accountDao.create(new Account(2, "TWO", 2423, 2.2));
-		accountDao.create(new Account(3, "THREE", 25235, 4.2));
-		accountDao.create(new Account(4, "FOUR", 124124, 0.2));
-		accountDao.create(new Account(5, "FIVE", 2342352, 0.4));
-		System.out.println("-----readAll()--------");
+public class AccountDaoTestMain {
+
+	public static void main(String[] args)throws Exception {
+		
+		AccountDao accountDao=new AccountDao();
+		System.out.println("-----create------");
+		/*
+		System.out.println(accountDao.create(new Account(11, "ONEONE", 34563478, 0.321)));
+		System.out.println(accountDao.create(new Account(2, "TWO", 43534, 0.98)));
+		System.out.println(accountDao.create(new Account(3, "THREE", 131, 0.51)));
+		System.out.println(accountDao.create(new Account(4, "김소미", 7687, 0.12)));
+		System.out.println(accountDao.create(new Account(5, "장하나", 8888, 0.32434)));
+		*/
+		
+		System.out.println("-----readAll------");
 		System.out.println(accountDao.readAll());
-		System.out.println("-----readOne()--------");
-		System.out.println(accountDao.readOne(4));
+		System.out.println("-----readOne------");
+		System.out.println(accountDao.readOne(5));
 		
 		
+		
+
 	}
+
 }

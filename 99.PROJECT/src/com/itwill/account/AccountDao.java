@@ -9,16 +9,12 @@ Dao(Data Access Object)
    Data Access(File, DB)에 관련된 단위기능(CRUD)을
    수행하는 객체
  */
-
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-
 public class AccountDao {
 	
 	/*
@@ -35,71 +31,63 @@ public class AccountDao {
 		}
 	}
 	/**********************************************/
-	private ArrayList<Account> readFile() throws Exception 
-	{
-		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(accountsFile));
-		ArrayList<Account> accountList = (ArrayList<Account>)ois.readObject();
+	private ArrayList<Account> readFile() throws Exception{
+		ObjectInputStream ois=
+				new ObjectInputStream(
+						new FileInputStream(accountsFile));
+		ArrayList<Account> accountList=(ArrayList<Account>)ois.readObject();
 		ois.close();
 		return accountList;
 	}
-	private void writeFile(ArrayList<Account> accountList) throws Exception 
-	{
-		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(accountsFile));
+	private void writeFile(ArrayList<Account> accountList) throws Exception{
+		ObjectOutputStream oos=
+				new ObjectOutputStream(
+						new FileOutputStream(accountsFile));
 		oos.writeObject(accountList);
 		oos.close();
 	}
-	/**
-	 * @throws Exception ********************************************/
+	/**********************************************/
 	/*
 	 * Create
 	 */
-	public boolean create(Account account) throws Exception 
-	{
-		if(!isDuplicateNo(account.getNo()))
-		{
-			ArrayList<Account> accountList = this.readFile();
+	public boolean create(Account account) throws Exception{
+		if(!this.isDuplicateNo(account.getNo())) {
+			ArrayList<Account> accountList=this.readFile();
 			accountList.add(account);
 			this.writeFile(accountList);
 			return true;
+		}else {
+			return false;
 		}
-		return false;
+		
+		
 	}
-	
-	private boolean isDuplicateNo(int no) throws Exception 
-	{
-		boolean isDup = false;
+	private boolean isDuplicateNo(int no) throws Exception{
+		boolean isDuplicate=false;
 		ArrayList<Account> accountList = this.readFile();
-		for (Account account : accountList) 
-		{
-			if(account.getNo() == no)
-			{
-				return true;
+		for (Account account : accountList) {
+			if(account.getNo()==no) {
+				isDuplicate=true;
+				break;
 			}
 		}
-		return isDup;
+		return isDuplicate;
 	}
-	
-	
 	/*
 	 * ReadOne
 	 * ReadAll
 	 */
-	public Account readOne(int no) throws Exception 
-	{
+	public Account readOne(int no) throws Exception {
 		ArrayList<Account> accountList = this.readFile();
-		Account findAccount = null;
-		for (Account account : accountList) 
-		{
-			if(account.getNo() == no)
-			{
-				findAccount = account;
+		Account findAccount=null;
+		for (Account account : accountList) {
+			if(account.getNo()==no) {
+				findAccount=account;
 			}
 		}
 		return findAccount;
 	}
-	
-	public ArrayList<Account> readAll() throws Exception 
-	{
+	public ArrayList<Account> readAll() throws Exception{
 		ArrayList<Account> accountList = this.readFile();
 		return accountList;
 	}

@@ -20,13 +20,10 @@ public class AccountService {
 	/*
 	 * 계좌생성
 	 */
-	public boolean addAccount(Account account) throws Exception {
+	public boolean addAccount(Account account) throws Exception{
 		boolean isAdd = accountDao.create(account);
 		return isAdd;
 	}
-	
-	
-	
 	/*
 	 * 계좌전체검색후 반환
 	 */
@@ -37,7 +34,7 @@ public class AccountService {
 	/*
 	 * 계좌번호로 1개검색후 반환
 	 */
-	public Account findAccountByNo(int no) throws Exception {
+	public Account findAccountByNo(int no)throws Exception {
 		Account account=accountDao.readOne(no);
 		return account;
 	}
