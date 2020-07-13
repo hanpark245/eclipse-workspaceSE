@@ -86,7 +86,8 @@ public class WrapperClassMain {
 		scoreArray[7]=92;
 		scoreArray[8]=99;
 		scoreArray[9]=66;
-		for (int i = 0; i < scoreArray.length; i++) {
+		for (int i = 0; i < scoreArray.length; i++) 
+		{
 			/*
 			Integer wi=(Integer)scoreArray[i];
 			int tempScore=wi.intValue();
@@ -95,15 +96,7 @@ public class WrapperClassMain {
 			int tempScore = (Integer)scoreArray[i];
 			System.out.print(tempScore+" ");
 		}
-		
-		
-		
-		
-		
-		
-		
 	}
-
 }
 
 

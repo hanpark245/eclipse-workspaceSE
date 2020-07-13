@@ -12,8 +12,7 @@ public class AccountFileReadWriteMain {
 		Account account2=new Account(2222, "TWO", 56000, 3.2);
 		System.out.println("--------Account객체내용파일에쓰기--------");
 		
-		DataOutputStream accountDos=
-				new DataOutputStream(new FileOutputStream("account.dat"));
+		DataOutputStream accountDos = new DataOutputStream(new FileOutputStream("account.dat"));
 		accountDos.writeInt(account1.getNo());
 		accountDos.writeUTF(account1.getOwner());
 		accountDos.writeInt(account1.getBalance());

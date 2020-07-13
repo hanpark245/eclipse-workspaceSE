@@ -9,6 +9,7 @@ public class ScannerMain {
 		 * 키보드객체생성
 		 */
 		Scanner scanner = new Scanner(System.in);
+		Scanner scanner2 = new Scanner(System.in);
 		while (true) {
 			System.out.print("이름을 입력하세요:");
 			/*

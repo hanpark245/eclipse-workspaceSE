@@ -8,10 +8,8 @@ public class AccountArrayListFileReadMain {
 
 	public static void main(String[] args) throws Exception{
 	
-		ArrayList<Account> accountList=new ArrayList<Account>();
-		DataInputStream accountListDis=
-				new DataInputStream(
-						new FileInputStream("accountList.dat"));
+		ArrayList<Account> accountList = new ArrayList<Account>();
+		DataInputStream accountListDis = new DataInputStream(new FileInputStream("accountList.dat"));
 		
 		int size = accountListDis.readInt();
 		for (int i = 0; i < size; i++) {
