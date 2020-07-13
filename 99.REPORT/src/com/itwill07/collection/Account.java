@@ -89,7 +89,7 @@ public class Account {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return this.no+"\t"+this.owner+"\t"+this.balance+"\t"+this.iyul;
+		return this.no+"\t"+this.owner+"\t"+this.balance+"\t"+this.iyul + "\n";
 	}
 	
 	//getter,setter

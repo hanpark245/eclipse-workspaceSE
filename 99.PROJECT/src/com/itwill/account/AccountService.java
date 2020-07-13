@@ -1,44 +1,48 @@
 package com.itwill.account;
+
 import java.util.ArrayList;
-/*
- * 은행업무를 실행할 클래스
- * 	- 계좌관리 비즈니스로직(업무)을 수행하는 클래스
- * 	- Account 객체를 사용(의존성 관계)
- * 	- GUI객체(AccountServiceMainFrame)에서 직접접근(메쏘드호출)하는 클래스
- * 	- AccountDao 객체를 이용하여 업무를 실행
- * 	- AccountDao 객체를 포함하고있다.[멤버변수]
+/* 
+ 	은행업무를 실행할클래스
+ 		- 계좌관리 업무를 수행하는 클래스
+ 		- Account객체를 사용(의존성관계)
+  		- AccountServiceMain 에서 사용
+  		- 업무를 처리시 데이타접근이 필요하면
+  		  	AccountDao객체 를 이용해서 업무를 실행
+  		- AccountDao객체를 포함하고있다.[멤버변수]
  */
 
-public class AccountService 
-{
-	
+public class AccountService {
 	private AccountDao accountDao;
 
-	public AccountService() 
-	{
+	public AccountService() throws Exception{
 		accountDao=new AccountDao();
 	}
-	public void a() 
-	{
-		System.out.println("AccountService.a()");
-		accountDao.a();
+	/*
+	 * 계좌생성
+	 */
+	public boolean addAccount(Account account) throws Exception {
+		boolean isAdd = accountDao.create(account);
+		return isAdd;
 	}
-	public boolean addAccount(Account newAccount) {
-		// TODO Auto-generated method stub
-		return false;
+	
+	
+	
+	/*
+	 * 계좌전체검색후 반환
+	 */
+	public ArrayList<Account> findByAll() throws Exception {
+		ArrayList<Account> accountList=accountDao.readAll();
+		return accountList;
 	}
-	public ArrayList<Account> getAccountList() {
-		// TODO Auto-generated method stub
-		return null;
+	/*
+	 * 계좌번호로 1개검색후 반환
+	 */
+	public Account findAccountByNo(int no) throws Exception {
+		Account account=accountDao.readOne(no);
+		return account;
 	}
 
 }
-
-
-
-
-
-
 
 
 

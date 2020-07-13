@@ -3,7 +3,11 @@ package com.itwill.account;
 import java.io.Serializable;
 
 /*
- * 은행계좌객체를 추상화한클래스
+은행계좌객체를 추상화한클래스
+VO(Value Object),DTO(Data Transfer Object)
+ 	- 계좌관리를 위하여 필요한 도메인클래스(VO,DTO)
+  	- 계좌객체 한개의 데이타를가지고있다.(VO)
+  	- 계좌객체 한개의 데이타를 저장하기위한멤버변수를 가지고있다
  */
 public class Account implements Serializable{
 	/*
@@ -44,12 +48,7 @@ public class Account implements Serializable{
 	public void deposit(int m) {
 		this.balance = this.balance + m;
 	}
-	public void withdraw(int m) throws InsufficientBalanceException{
-		if(this.balance-m < 0) {
-			throw new InsufficientBalanceException(this.owner+" 님 잔고가 부족합니다.");
-			
-		}
-		
+	public void withdraw(int m){
 		this.balance=this.balance-m;
 		return;
 	}
@@ -91,7 +90,7 @@ public class Account implements Serializable{
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return this.no+"\t"+this.owner+"\t"+this.balance+"\t"+this.iyul;
+		return this.no+"\t"+this.owner+"\t"+this.balance+"\t"+this.iyul+"\n";
 	}
 	
 	//getter,setter
