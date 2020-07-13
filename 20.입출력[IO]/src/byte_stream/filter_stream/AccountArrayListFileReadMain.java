@@ -9,19 +9,26 @@ public class AccountArrayListFileReadMain {
 	public static void main(String[] args) throws Exception{
 	
 		ArrayList<Account> accountList=new ArrayList<Account>();
-		DataInputStream accountListDis= new DataInputStream(new FileInputStream("accountList.dat"));
+		DataInputStream accountListDis=
+				new DataInputStream(
+						new FileInputStream("accountList.dat"));
 		
 		int size = accountListDis.readInt();
-		for (int i = 0; i < size; i++) 
-		{
-			accountList.add(new Account(accountListDis.readInt(), accountListDis.readUTF(), accountListDis.readInt(), accountListDis.readDouble()));
+		for (int i = 0; i < size; i++) {
+			accountList.add(
+					new Account(	accountListDis.readInt(),
+							 		accountListDis.readUTF(), 
+							 		accountListDis.readInt(), 
+							 		accountListDis.readDouble())
+								);
 		}
 		accountListDis.close();
+		
 		Account.headerPrint();
-		for (Account account : accountList) 
-		{
+		for (Account account : accountList) {
 			account.print();
 		}
+		
 	}
 
 }

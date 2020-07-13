@@ -1,5 +1,7 @@
 package lang;
 
+
+
 public class LottoMain {
 
 	public static void main(String[] args) {
@@ -15,7 +17,7 @@ public class LottoMain {
 		}
 		
 		
-		
+	
 		
 
 	}

@@ -24,9 +24,7 @@ public class AccountArrayListSerializationMain {
 				new Account(9999, "QIM", 99000, 3.3));
 		ObjectOutputStream oos=
 				new ObjectOutputStream(new FileOutputStream("accountList.ser"));
-		
-		
-		System.out.println("---ArrayList<Stduent> --> accountList.ser ----------");
+		System.out.println("--- << ArratList<Student> --> accoutList.ser >>----------");
 		oos.writeObject(accountList);
 		oos.flush();
 		oos.close();

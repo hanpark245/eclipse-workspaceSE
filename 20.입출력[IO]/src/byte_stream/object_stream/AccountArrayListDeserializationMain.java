@@ -10,14 +10,13 @@ import byte_stream.filter_stream.Account;
 public class AccountArrayListDeserializationMain {
 
 	public static void main(String[] args) throws Exception{
-		ObjectInputStream ois = new ObjectInputStream(new FileInputStream("accountList.ser"));
+		ObjectInputStream ois=
+				new ObjectInputStream(new FileInputStream("accountList.ser"));
 		
-				
-		List<Account> accountList= (List<Account>)ois.readObject();
-		System.out.println("------accountList.ser --> ArrayList<Student> read -------");
+		List<Account> accountList=(List<Account>)ois.readObject();
+		System.out.println("------ accountList.ser --> ArrayList<Student> read-----");
 		Account.headerPrint();
-		for (Account account : accountList) 
-		{
+		for (Account account : accountList) {
 			account.print();
 		}
 	}

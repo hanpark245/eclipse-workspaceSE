@@ -1,6 +1,8 @@
 package byte_stream.filter_stream;
 
-public class Account implements Comparable{
+import java.io.Serializable;
+
+public class Account implements Comparable,Serializable{
 	/*
 	 * 멤버필드
 	 */

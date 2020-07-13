@@ -11,12 +11,18 @@ public class FileReaderMain {
 		readChar = fr.read();
 		System.out.println("2.readChar:"+(char)readChar);
 		int lineCount=0;
+		boolean b=true;
 		while (true) {
 			readChar = fr.read();
 			if(readChar==-1)break;
+			if(b) {
+				System.out.print(lineCount+":");
+				b=false;
+			}
 			System.out.print((char)readChar);
 			if(readChar=='\n') {
 				lineCount++;
+				b=!b;
 			}
 		}
 		fr.close();

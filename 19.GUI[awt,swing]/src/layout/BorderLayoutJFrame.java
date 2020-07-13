@@ -44,17 +44,17 @@ public class BorderLayoutJFrame extends JFrame {
 		JButton btnNewButton = new JButton("NORTH");
 		contentPane.add(btnNewButton, BorderLayout.NORTH);
 		
-		JButton btnNewButton_1 = new JButton("CENTER");
-		contentPane.add(btnNewButton_1, BorderLayout.CENTER);
+		JButton btnNewButton_1 = new JButton("WEST");
+		contentPane.add(btnNewButton_1, BorderLayout.WEST);
 		
-		JButton btnNewButton_2 = new JButton("WEST");
-		contentPane.add(btnNewButton_2, BorderLayout.WEST);
+		JButton btnNewButton_2 = new JButton("CENTER");
+		contentPane.add(btnNewButton_2, BorderLayout.CENTER);
 		
-		JButton btnNewButton_3 = new JButton("EAST");
-		contentPane.add(btnNewButton_3, BorderLayout.EAST);
+		JButton btnNewButton_3 = new JButton("SOUTH");
+		contentPane.add(btnNewButton_3, BorderLayout.SOUTH);
 		
-		JButton btnNewButton_4 = new JButton("SOUTH");
-		contentPane.add(btnNewButton_4, BorderLayout.SOUTH);
+		JButton btnNewButton_4 = new JButton("EAST");
+		contentPane.add(btnNewButton_4, BorderLayout.EAST);
 	}
 
 }
