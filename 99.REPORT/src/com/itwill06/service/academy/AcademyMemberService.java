@@ -20,7 +20,8 @@ public class AcademyMemberService {
 			new AcademyStaff(9, "QIM", "생산")
 	};
 	
-	public AcademyMember[] getMembers() {
+	public AcademyMember[] getMembers() 
+	{
 		return members;
 	}
 	
@@ -41,15 +42,34 @@ public class AcademyMemberService {
 		
 		return findMember;
 	}
-	public AcademyMember[] findAcademyMemberByName(String name) {
-		AcademyMember[] findMembers=null;
+	public AcademyMember[] findAcademyMemberByName(String name) 
+	{
+		int j = 0;
+		for (int i = 0; i < members.length; i++) 
+		{
+			if(members[i].getName() == name)
+			{
+				j++;
+			}
+		}
+		AcademyMember findMembers[] = new AcademyMember[j];
+		j = 0;
+		for (int i = 0; i < members.length; i++) 
+		{
+			if(members[i].getName() == name)
+			{
+				findMembers[j] = members[i];
+				j++;
+			}
+		}
 		return findMembers;
 	}
 	/*
 	 * 강사 or 학생 or Staff들 반환( instanceof연산자)
 	 * 	
 	 */
-	public AcademyMember[] findAcademyStudents(){
+	public AcademyMember[] findAcademyStudents()
+	{
 		AcademyMember[] students=null;
 		int count=0;
 		for (int i = 0; i < members.length; i++) {
@@ -73,9 +93,75 @@ public class AcademyMemberService {
 	public AcademyMember[] findAcademyStaffs(){
 		return null;
 	}
+
 	
-	public AcademyMember[] findAcademyMembersByType(int type) {
-		AcademyMember[] findMembers=null;
+	
+	
+	public AcademyMember[] findAcademyMembersByType(int type) 
+	{
+		int index = 0;
+		
+		if(type == 0)
+		{
+			for (int i = 0; i < members.length; i++) 
+			{
+				if(members[i] instanceof AcademyStudent) 
+				{ 	
+					index++;
+				}
+			}
+			AcademyMember findMembers[] = new AcademyMember[index];
+			index = 0;
+			for (int i = 0; i < members.length; i++) 
+			{
+				if (members[i] instanceof AcademyStudent) 
+				{
+					findMembers[index] = members[i];
+					index++;
+				}
+			}
+		}
+		else if(type == 1)
+		{
+			for (int i = 0; i < members.length; i++) 
+			{
+				if(members[i] instanceof AcademyGangsa) 
+				{ 	
+					index++;
+				}
+			}
+			AcademyMember findMembers[] = new AcademyMember[index];
+			index = 0;
+			for (int i = 0; i < members.length; i++) 
+			{
+				if (members[i] instanceof AcademyGangsa) 
+				{
+					findMembers[index] = members[i];
+					index++;
+				}
+			}
+		}
+		else
+		{
+			for (int i = 0; i < members.length; i++) 
+			{
+				if(members[i] instanceof AcademyStaff) 
+				{ 	
+					index++;
+				}
+			}
+			AcademyMember findMembers[] = new AcademyMember[index];
+			index = 0;
+			for (int i = 0; i < members.length; i++) 
+			{
+				if (members[i] instanceof AcademyStaff) 
+				{
+					findMembers[index] = members[i];
+					index++;
+				}
+			}
+		}
+
 		return findMembers;
 	}
 	
@@ -98,8 +184,26 @@ public class AcademyMemberService {
 	 * 리눅스과목 강사들 찾아서 반환해줘 
 	 * 영업부서   스텝들 찾아서 반환해줘 
 	 */
-	public AcademyMember[] findByAcademyMembers(int type,String searchStr) {
-		AcademyMember[] findMembers=null;
+	public AcademyMember[] findByAcademyMembers(int type,String searchStr) 
+	{
+		int index = 0;
+		for (int i = 0; i < members.length; i++) 
+		{
+			if(type == members[i].getNo())
+			{
+				index++;
+			}
+		}
+		AcademyMember[] findMembers = new AcademyMember[index];
+		int j = 0;
+		for (int i = 0; i < members.length; i++) 
+		{
+			if(type == members[i].getNo())
+			{
+				findMembers[j] = members[i];
+				j++;
+			}
+		}
 		return findMembers;
 	} 
 	/*
