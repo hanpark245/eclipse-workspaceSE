@@ -94,11 +94,35 @@ public class AccountDao {
 	/*
 	 * Update
 	 */
-	public void update(Account account) throws Exception 
+	/*
+	public void update(Account updateAccount) throws Exception 
 	{
 		ArrayList<Account> accountList = this.readFile();
-			
+		for (Account account : accountList) 
+		{
+			if (account.getNo() == updateAccount.getNo()) 
+			{
+				account.setOwner(updateAccount.getOwner());
+				account.setBalance(updateAccount.getBalance());
+				account.setIyul(updateAccount.getIyul());
+			}
+		}
 	}
+	*/
+	public void update(Account updateAccount) throws Exception 
+	{
+		ArrayList<Account> accountList = this.readFile();
+		for (int i = 0; i < accountList.size(); i++) 
+		{
+			if (accountList.get(i).getNo() == updateAccount.getNo()) 
+			{
+				accountList.set(i, updateAccount);
+				break;
+			}
+		}
+	}
+	
+	
 	/*
 	 * Delete
 	 */
