@@ -94,13 +94,16 @@ public class AccountDao {
 	/*
 	 * Update
 	 */
-	public void update() {
-		
+	public void update(Account account) throws Exception 
+	{
+		ArrayList<Account> accountList = this.readFile();
+			
 	}
 	/*
 	 * Delete
 	 */
-	public void delete() {
+	public void delete(int no)
+	{
 		
 	}
 	
