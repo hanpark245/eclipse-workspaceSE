@@ -21,8 +21,15 @@ public class AccountDaoTestMain {
 		System.out.println(accountDao.readAll());
 		System.out.println("-----readOne------");
 		System.out.println(accountDao.readOne(5));
+		System.out.println("-----update------");
+		Account updateAccount = accountDao.readOne(5);
+		updateAccount.setOwner("장두나");
+		updateAccount.setBalance(1111);
+		accountDao.update(updateAccount);
+		System.out.println("------delete-----");
+		accountDao.delete(11);
 		
-		
+		System.out.println(accountDao.readAll());
 		
 
 	}

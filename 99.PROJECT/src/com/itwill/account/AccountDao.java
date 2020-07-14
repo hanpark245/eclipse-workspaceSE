@@ -120,15 +120,36 @@ public class AccountDao {
 				break;
 			}
 		}
+		this.writeFile(accountList);
 	}
-	
+	public void update(int no, String owner, int balance, double iyul) throws Exception 
+	{
+		ArrayList<Account> accountList = this.readFile();
+		for (int i = 0; i < accountList.size(); i++) 
+		{
+			if (accountList.get(i).getNo() == no) 
+			{
+				accountList.get(i).setAccountData(no, owner, balance, iyul);
+				break;
+			}
+		}
+	}
 	
 	/*
 	 * Delete
 	 */
-	public void delete(int no)
+	public void delete(int no) throws Exception
 	{
-		
+		ArrayList<Account> accountList = this.readFile();
+		for (int i = 0; i < accountList.size(); i++) 
+		{
+			if(accountList.get(i).getNo() == no)
+			{
+				accountList.remove(i);
+				break;
+			}
+		}
+		this.writeFile(accountList);
 	}
 	
 }
