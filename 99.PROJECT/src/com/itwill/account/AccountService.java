@@ -39,6 +39,19 @@ public class AccountService {
 		return account;
 	}
 
+	/*
+	 * 계좌입금
+	 */
+	public void ipGum(int no, int m) throws Exception
+	{
+		/*
+		 * 	1. 계좌번호로 계좌를 찾는다.
+		 * 	2. 입금
+		 */
+		Account account = accountDao.readOne(no);
+		account.deposit(m);
+		accountDao.update(account);
+	}
 }
 
 
