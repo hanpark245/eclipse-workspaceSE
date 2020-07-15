@@ -2,7 +2,7 @@ package com.itwill.member;
 
 import java.io.Serializable;
 
-public class Member implements Serializable{
+public class Member implements Serializable {
 	/*
 	 *  중복되지않아야하는필드
 	 */
@@ -72,7 +72,7 @@ public class Member implements Serializable{
 	@Override
 	public String toString() {
 		return "Member [id=" + id + ", password=" + password + ", name=" + name + ", address=" + address + ", age="
-				+ age + ", married=" + married + "]";
+				+ age + ", married=" + married + "]\n";
 	}
 	
 	

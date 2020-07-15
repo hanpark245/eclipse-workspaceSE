@@ -3,10 +3,9 @@ package com.itwill.member.test;
 import com.itwill.member.Member;
 import com.itwill.member.MemberDao;
 
-public class MembeDaoTestMain 
-{
-	public static void main(String[] args) throws Exception
-	{
+public class MembeDaoTestMain {
+
+	public static void main(String[] args) throws Exception{
 		MemberDao memberDao=new MemberDao();
 		System.out.println("-----------------create--------------");
 		boolean isAdd=memberDao.create(new  Member("xxx", "xxx", "김경호", "서울시민", 34, true));
@@ -17,5 +16,7 @@ public class MembeDaoTestMain
 		System.out.println(isAdd);
 		System.out.println("-----------------readAll--------------");
 		System.out.println(memberDao.readAll());
+
 	}
+
 }

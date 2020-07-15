@@ -15,7 +15,9 @@ public class AccountService {
 	private AccountDao accountDao;
 
 	public AccountService() throws Exception{
-		accountDao=new AccountDao();
+		//accountDao=new AccountDaoFileImpl();
+		accountDao=new AccountDaoMemoryImpl();
+		//accountDao=new AccountDaoDBImpl();
 	}
 	/*
 	 * 계좌생성
@@ -79,9 +81,8 @@ public class AccountService {
 		
 		return closeAccount;
 	}
-	public ArrayList<Account> findAccountByOwner(String ownerStr) throws Exception 
-	{
-		ArrayList<Account> accountList = accountDao.readByOwner(ownerStr);
+	public ArrayList<Account> findAccountByOwner(String ownerStr)throws Exception {
+		ArrayList<Account> accountList=accountDao.readByOwner(ownerStr);
 		return accountList;
 	}
 }

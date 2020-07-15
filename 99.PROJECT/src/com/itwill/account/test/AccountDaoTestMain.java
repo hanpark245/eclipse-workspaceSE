@@ -1,13 +1,14 @@
 package com.itwill.account.test;
 
 import com.itwill.account.Account;
+import com.itwill.account.AccountDaoFileImpl;
 import com.itwill.account.AccountDao;
 
 public class AccountDaoTestMain {
 
 	public static void main(String[] args)throws Exception {
 		
-		AccountDao accountDao=new AccountDao();
+		AccountDao accountDao=new AccountDaoFileImpl();
 		System.out.println("-----create------");
 		
 		System.out.println(accountDao.create(new Account(11, "ONEONE", 0, 0.321)));

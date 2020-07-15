@@ -140,18 +140,6 @@ public class AccountPanel extends JPanel {
 		btnNewButton_5.setBounds(195, 205, 97, 23);
 		addP.add(btnNewButton_5);
 		
-		JPanel searchP = new JPanel();
-		searchP.setBackground(Color.YELLOW);
-		accountTP.addTab("계좌찾기", null, searchP, null);
-		searchP.setLayout(null);
-		
-		JPanel depositP = new JPanel();
-		depositP.setBackground(Color.GREEN);
-		accountTP.addTab("입금", null, depositP, null);
-		depositP.setLayout(null);
-
-		accountTP.setSelectedIndex(0);
-		
 		JPanel listP = new JPanel();
 		listP.setBackground(Color.ORANGE);
 		accountTP.addTab("계좌리스트", null, listP, null);
@@ -182,6 +170,18 @@ public class AccountPanel extends JPanel {
 		});
 		btnNewButton_7.setBounds(214, 10, 70, 23);
 		listP.add(btnNewButton_7);
+		
+		JPanel searchP = new JPanel();
+		searchP.setBackground(Color.YELLOW);
+		accountTP.addTab("계좌찾기", null, searchP, null);
+		searchP.setLayout(null);
+		
+		JPanel depositP = new JPanel();
+		depositP.setBackground(Color.GREEN);
+		accountTP.addTab("입금", null, depositP, null);
+		depositP.setLayout(null);
+
+		accountTP.setSelectedIndex(0);
 		myServiceInit();
 	}
 	/***********서비스객체들생성***********************/
@@ -259,11 +259,9 @@ public class AccountPanel extends JPanel {
 				if(ownerStr.equals("")) {
 					JOptionPane.showMessageDialog(null, "이름을 입력하세요!!");
 					searchTF.requestFocus();
+					return;
 				}
 				accountList = accountService.findAccountByOwner(ownerStr);
-				
-				
-				
 				break;
 			case "잔고":
 				

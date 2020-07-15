@@ -84,10 +84,35 @@ public class MemberDao {
 		}
 		return findMember;
 	}
-	public void update(Member updateMember) {
-		
+	/*
+	 * update
+	 */
+	public void update(Member updateMember) throws Exception{
+		ArrayList<Member> memberList=this.readFile();
+		for (Member member : memberList) {
+			if(member.getId().equals(updateMember.getId())) {
+				member.setPassword(updateMember.getPassword());
+				member.setName(updateMember.getName());
+				member.setAddress(updateMember.getAddress());
+				member.setAge(updateMember.getAge());
+				member.setMarried(updateMember.isMarried());
+				break;
+			}
+		}
+		this.writeFile(memberList);
 	}
-	public void delete(String id) {
+	/*
+	 * delete
+	 */
+	public void delete(String id) throws Exception {
+		ArrayList<Member> memberList=this.readFile();
+		for (Member member : memberList) {
+			if(member.getId().equals(id)) {
+				memberList.remove(member);
+				break;
+			}
+		}
+		this.writeFile(memberList);
 		
 	}
 }
