@@ -93,65 +93,67 @@ public class AccountDao {
 	}
 	/*
 	 * Update
-	 */
 	/*
-	public void update(Account updateAccount) throws Exception 
-	{
-		ArrayList<Account> accountList = this.readFile();
-		for (Account account : accountList) 
-		{
-			if (account.getNo() == updateAccount.getNo()) 
-			{
+	public void update(Account updateAccount) throws Exception {
+		ArrayList<Account> accountList=this.readFile();
+		for (Account account : accountList) {
+			if(account.getNo()==updateAccount.getNo()) {
 				account.setOwner(updateAccount.getOwner());
 				account.setBalance(updateAccount.getBalance());
 				account.setIyul(updateAccount.getIyul());
+				break;
 			}
 		}
+		this.writeFile(accountList);
 	}
-	*/
-	public void update(Account updateAccount) throws Exception 
-	{
-		ArrayList<Account> accountList = this.readFile();
-		for (int i = 0; i < accountList.size(); i++) 
-		{
-			if (accountList.get(i).getNo() == updateAccount.getNo()) 
-			{
+	 */
+	public void update(Account updateAccount) throws Exception {
+		ArrayList<Account> accountList=this.readFile();
+		for (int i = 0; i < accountList.size(); i++) {
+			if(accountList.get(i).getNo()==updateAccount.getNo()) {
 				accountList.set(i, updateAccount);
 				break;
 			}
 		}
 		this.writeFile(accountList);
 	}
-	public void update(int no, String owner, int balance, double iyul) throws Exception 
-	{
-		ArrayList<Account> accountList = this.readFile();
-		for (int i = 0; i < accountList.size(); i++) 
-		{
-			if (accountList.get(i).getNo() == no) 
-			{
-				accountList.get(i).setAccountData(no, owner, balance, iyul);
-				break;
+	public void update(int no,String owner,int balalnce,double iyul) throws Exception {
+		ArrayList<Account> accountList=this.readFile();
+		for (int i = 0; i < accountList.size(); i++) {
+			if(accountList.get(i).getNo()==no) {
+				accountList.get(i).setOwner(owner);
+				accountList.get(i).setBalance(balalnce);
+				accountList.get(i).setIyul(iyul);
 			}
 		}
+		this.writeFile(accountList);
 	}
-	
 	/*
 	 * Delete
 	 */
-	public void delete(int no) throws Exception
-	{
-		ArrayList<Account> accountList = this.readFile();
-		for (int i = 0; i < accountList.size(); i++) 
-		{
-			if(accountList.get(i).getNo() == no)
-			{
+	public void delete(int no) throws Exception{
+		ArrayList<Account> accountList=this.readFile();
+		for (int i=0;i<accountList.size();i++) {
+			if(accountList.get(i).getNo()==no) {
 				accountList.remove(i);
 				break;
 			}
 		}
 		this.writeFile(accountList);
+		
 	}
-	
+	public ArrayList<Account> readByOwner(String ownerStr) throws Exception{
+		ArrayList<Account> accountList = this.readFile();
+		ArrayList<Account> findAccounts = new ArrayList<Account>();
+		for (Account account : findAccounts) {
+			if(account.getOwner().equals(ownerStr))
+			{
+				findAccounts.add(account);
+			}
+		}
+		return findAccounts;
+	}
+
 }
 
 

@@ -49,6 +49,9 @@ public class Account implements Serializable{
 		this.balance = this.balance + m;
 	}
 	public void withdraw(int m){
+		if(this.balance-m < 0) {
+			return;
+		}
 		this.balance=this.balance-m;
 		return;
 	}
