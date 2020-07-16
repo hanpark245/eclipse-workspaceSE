@@ -16,7 +16,20 @@ public class MembeDaoTestMain {
 		System.out.println(isAdd);
 		System.out.println("-----------------readAll--------------");
 		System.out.println(memberDao.readAll());
-
+		System.out.println("-----------------readOne--------------");
+		System.out.println(memberDao.readOne("xxx"));
+		System.out.println("-----------------update--------------");
+		Member updateMember = memberDao.readOne("xxx");
+		updateMember.setName("김변경");
+		updateMember.setAddress("KANGNAM");
+		updateMember.setAge(12);
+		updateMember.setMarried(true);
+		memberDao.update(updateMember);
+		System.out.println(memberDao.readOne("xxx"));
+		System.out.println("-----------------delete--------------");
+		memberDao.delete("xxx");
+		System.out.println(memberDao.readAll());
+		
 	}
 
 }
